@@ -1,2 +1,2 @@
 # node-databases
-Learn about the various database options available for Node.js applications, so that you can select the right database for your app. 
+Node.js developers often consider MongoDB to be their main choice when building a data-driven application—but many alternatives may provide better solutions. Learn about the various database options available for Node.js applications, so that you can select the right database for your app. Daniel Khan reviews the basics of relational and nonrelational databases, and explains how—and when—to use document databases with Node.js. He also covers using key-value stores and relational databases with Node.js, demonstrating how to work with MySQL and Sequelize.
