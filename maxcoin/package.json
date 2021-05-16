@@ -11,7 +11,8 @@
   "dependencies": {
     "axios": "0.21.1",
     "ioredis": "4.27.2",
-    "mongodb": "3.6.6"
+    "mongodb": "3.6.6",
+    "mysql2": "2.2.5"
   },
   "devDependencies": {
     "eslint": "7.10.0",
