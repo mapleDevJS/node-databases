@@ -10,7 +10,8 @@ async function connectMongoose() {
   return mongoose.connect(config.mongodb.url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true
+    useCreateIndex: true,
+    useFindAndModify: false
   });
 }
 
