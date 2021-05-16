@@ -1,13 +1,11 @@
 const express = require("express");
 
-const ItemService = require(".../../../services/ItemService");
+const ItemService = require("../../../services/ItemService");
 
 module.exports = () => {
   const router = express.Router();
 
   router.get("/:itemId?", async (req, res, next) => {
-    return res.render("admin/item", {});
-
     try {
       const items = await ItemService.getAll();
       let item = null;
@@ -28,8 +26,6 @@ module.exports = () => {
 
   // Save or update item
   router.post("/", async (req, res) => {
-    return next("Not implemented");
-
     // Massage the passed in form data a bit
     const sku = req.body.sku.trim();
     const name = req.body.name.trim();
@@ -75,10 +71,8 @@ module.exports = () => {
 
   // Delete item
   router.get("/delete/:itemId", async (req, res) => {
-    return next("Not implemented");
-
     try {
-      await ItemService.remove(req.params.itemId);
+      await ItemService.remove({ _id: req.params.itemId });
     } catch (err) {
       // Error handling
       req.session.messages.push({
