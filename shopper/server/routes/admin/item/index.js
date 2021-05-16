@@ -1,12 +1,13 @@
 const express = require("express");
 
+const ItemService = require(".../../../services/ItemService");
+
 module.exports = () => {
   const router = express.Router();
 
-  router.get("/:itemId?", async (req, res) => {
+  router.get("/:itemId?", async (req, res, next) => {
     return res.render("admin/item", {});
 
-    /*
     try {
       const items = await ItemService.getAll();
       let item = null;
@@ -18,19 +19,17 @@ module.exports = () => {
 
       return res.render("admin/item", {
         items,
-        item,
+        item
       });
     } catch (err) {
       return next(err);
     }
-    */
   });
 
   // Save or update item
-  router.post("/", async (req, res, next) => {
+  router.post("/", async (req, res) => {
     return next("Not implemented");
 
-    /*
     // Massage the passed in form data a bit
     const sku = req.body.sku.trim();
     const name = req.body.name.trim();
@@ -40,7 +39,7 @@ module.exports = () => {
     if (!sku || !name || !price) {
       req.session.messages.push({
         type: "warning",
-        text: "Please enter SKU, name and price!",
+        text: "Please enter SKU, name and price!"
       });
       return res.redirect("/admin/item");
     }
@@ -53,7 +52,7 @@ module.exports = () => {
         const itemData = {
           sku,
           name,
-          price,
+          price
         };
         await ItemService.update(req.body.itemId, itemData);
       }
@@ -61,32 +60,30 @@ module.exports = () => {
         type: "success",
         text: `The item was ${
           req.body.itemId ? "updated" : "created"
-        } successfully!`,
+        } successfully!`
       });
       return res.redirect("/admin/item");
     } catch (err) {
       req.session.messages.push({
         type: "danger",
-        text: "There was an error while saving the item!",
+        text: "There was an error while saving the item!"
       });
       console.error(err);
       return res.redirect("/admin/item");
     }
-    */
   });
 
   // Delete item
-  router.get("/delete/:itemId", async (req, res, next) => {
+  router.get("/delete/:itemId", async (req, res) => {
     return next("Not implemented");
 
-    /*
     try {
       await ItemService.remove(req.params.itemId);
     } catch (err) {
       // Error handling
       req.session.messages.push({
         type: "danger",
-        text: "There was an error while deleting the item!",
+        text: "There was an error while deleting the item!"
       });
       console.error(err);
       return res.redirect("/admin/item");
@@ -94,10 +91,9 @@ module.exports = () => {
     // Let the item knows that everything went fine
     req.session.messages.push({
       type: "success",
-      text: "The item was successfully deleted!",
+      text: "The item was successfully deleted!"
     });
     return res.redirect("/admin/item");
-    */
   });
   return router;
 };
