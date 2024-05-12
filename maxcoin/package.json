@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "0.21.1",
+    "axios": "0.28.0",
     "ioredis": "4.27.2",
     "mongodb": "3.6.6",
     "mysql2": "3.9.7"
