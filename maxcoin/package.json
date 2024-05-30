@@ -12,7 +12,7 @@
     "axios": "0.28.0",
     "ioredis": "4.27.2",
     "mongodb": "3.6.10",
-    "mysql2": "3.9.7"
+    "mysql2": "3.9.8"
   },
   "devDependencies": {
     "eslint": "7.10.0",
