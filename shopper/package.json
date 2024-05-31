@@ -17,7 +17,7 @@
     "ioredis": "4.27.2",
     "mongoose": "5.13.20",
     "mysql2": "3.9.7",
-    "pug": "3.0.2",
+    "pug": "3.0.3",
     "sequelize": "6.29.0"
   },
   "devDependencies": {
